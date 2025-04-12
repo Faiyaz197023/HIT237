@@ -81,14 +81,23 @@ class ProtectDetailView(View):
 
 class ProtectView(View):
     def get(self, request):
+        query = request.GET.get('search', '').lower()
         protected_pests = self.combine_protection_data()
-        return render(request, "main/protect.html", {"protected_pests": protected_pests})
+
+        if query:
+            protected_pests = [
+                pest for pest in protected_pests
+                if query in pest.name.lower() or query in pest.scientific_name.lower()
+            ]
+
+        return render(request, "main/protect.html", {"protected_pests": protected_pests, "query": query})
 
     def combine_protection_data(self):
         return [
             Protect_Against_Pest.from_protect_data(pest, pests_description, pest_protect_data)
             for pest in pests_data
         ]
+
 
 class DiseasesView(View):
     def get(self, request):
