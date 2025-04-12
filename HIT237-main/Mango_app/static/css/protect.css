@@ -36,3 +36,46 @@ body {
 .protect strong {
     color: #34495e;
 }
+
+
+
+form {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+form input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+
+form input[type="text"]:focus {
+    border-color: #009688;
+    outline: none;
+}
+
+
+form button {
+    padding: 10px 20px;
+    background-color: #009688;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+form button:hover {
+    background-color: #00796b;
+}
