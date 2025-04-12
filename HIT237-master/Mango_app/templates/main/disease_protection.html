@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disease Protection</title>
+    <link rel="stylesheet" href="{% static 'css/protect.css' %}">
+</head>
+<body>
+    <nav>
+        {% include 'main/nav.html' %}
+    </nav>
+
+    <main>
+        <div class="protect">
+            <h1>Disease Protection Strategies</h1>
+
+            <form method="get" action="">
+                <input type="text" name="search" placeholder="Search diseases..." value="{{ query|default:'' }}">
+                <button type="submit">Search</button>
+            </form>
+
+            {% if protections|length == 0 %}
+                <p>No diseases found matching your search.</p>
+            {% else %}
+                <ul>
+                    {% for disease in protections %}
+                        <li>
+                            <h2>{{ disease.name }} ({{ disease.scientific_name }})</h2>
+                            <p><strong>Affects:</strong> {{ disease.affects }}</p>
+                            <p><strong>Description:</strong> {{ disease.description }}</p>
+                            <p><strong>Controlling Strategies:</strong> {{ disease.controlling_strategies }}</p>
+                            <p><strong>Monitoring:</strong> {{ disease.monitoring }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </main>
+</body>
+</html>
