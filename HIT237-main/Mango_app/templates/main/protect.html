@@ -8,8 +8,14 @@
     <link rel="stylesheet" href="{% static 'css/protect.css'%}">
 </head>
 <body>
+    <nav>
+        {% include 'main/nav.html' %}
+    </nav>
+
    <main>
-    <h1>Protection Strategies</h1>
+    <div class="protect">
+
+    <h1>Protection Strategies Documentation</h1>
     <ul>
         {% for pest in protected_pests %}
             <li>
@@ -21,6 +27,7 @@
             </li>
         {% endfor %}
     </ul>
+</div>
 </main>
 </body>
 </html>
