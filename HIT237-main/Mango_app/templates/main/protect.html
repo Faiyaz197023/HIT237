@@ -1,33 +1,41 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Protection Strategies</title>
-    <link rel="stylesheet" href="{% static 'css/protect.css'%}">
+    <link rel="stylesheet" href="{% static 'css/protect.css' %}">
 </head>
 <body>
     <nav>
         {% include 'main/nav.html' %}
     </nav>
 
-   <main>
-    <div class="protect">
+    <main>
+        <div class="protect">
+            <h1>Protection Strategies Documentation</h1>
 
-    <h1>Protection Strategies Documentation</h1>
-    <ul>
-        {% for pest in protected_pests %}
-            <li>
-                <h2>{{ pest.name }} ({{ pest.scientific_name }})</h2>
-                <p><strong>Affects:</strong> {{ pest.affects }}</p>
-                <p><strong>Description:</strong> {{ pest.description }}</p>
-                <p><strong>Controlling Strategies:</strong> {{ pest.controlling_strategies }}</p>
-                <p><strong>Monitoring:</strong> {{ pest.monitoring }}</p>
-            </li>
-        {% endfor %}
-    </ul>
-</div>
-</main>
+            <form method="get" action="">
+                <input type="text" name="search" placeholder="Search pests..." value="{{ query|default:'' }}">
+                <button type="submit">Search</button>
+            </form>
+
+            {% if protected_pests|length == 0 %}
+                <p>No pests found matching your search.</p>
+            {% else %}
+                <ul>
+                    {% for pest in protected_pests %}
+                        <li>
+                            <h2>{{ pest.name }} ({{ pest.scientific_name }})</h2>
+                            <p><strong>Affects:</strong> {{ pest.affects }}</p>
+                            <p><strong>Description:</strong> {{ pest.description }}</p>
+                            <p><strong>Controlling Strategies:</strong> {{ pest.controlling_strategies }}</p>
+                            <p><strong>Monitoring:</strong> {{ pest.monitoring }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </main>
 </body>
 </html>
