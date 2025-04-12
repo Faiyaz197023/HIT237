@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANGO PESTS PREVENTION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/home.css'%}">
+    
+
+</head>
+<body>
+   
+<main alt="main-section">  
+ 
+<nav>
+    {% include 'main/nav.html' %}
+</nav>
+  
+<div class="slideshow-container">
+
+  <div class="mySlides" style="display:none">
+    <div class="numbertext"></div>
+    <img src="{% static 'images/introduction.jpg'%}" style="width:100%">
+    <div class="text">
+      <h2>Do you know about the pests and diseases?</h2>
+      <p>In Australia, mangoes are susceptible to pests like the mango fruit fly and 
+        diseases such as Anthracnose, which can impact fruit quality and yields</p>
+        <a href ="{% url 'pests' %}">
+          <button >Find out about pests</button>
+          
+        </a>
+        <button >Find out about diseases</button>
+      </div>
+  </div>
+  
+  <div class="mySlides">
+    <div class="numbertext"></div>
+    <img src="{% static 'images/intro2.jpg'%}" style="width:100%">
+    <div class="text">
+      <h2>Do you know how to protect your plants?</h2>
+      <p>Effective pest and disease management ensures 
+        the health of mango crops and helps deliver the best mangoes to your table!</p>
+      <button>Find out more</button>
+      </div>
+  </div>
+  
+  <div class="mySlides" style="display:none">
+    <div class="numbertext"></div>
+    <img src="{% static 'images/introduction3.jpg'%}" style="width:100%">
+    <div class="text">
+      <h2>Calculate your survelliance report</h2>
+      <p>KNOW YOUR PROFIT AND LOSS</p>
+      <a href ="">
+      <button >Find out more</button>
+    </a>
+      </div>
+  </div>
+  
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+  
+  </div>
+  <br>
+  
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+  </div>
+
+
+  <div class="grid-container">
+    <div class="card">
+      <div class="image">
+        <img src="{% static 'images/mango.jpg'%}">
+      </div>
+      <div class="content">
+        <h2>PESTS AND DISEASES</h2> 
+        <p>We have arranged all the pests<br>and diseases to look for<br></p>
+
+     <a href="{% url 'pests' %}" class="button-wrapper">
+    <button class="btn_for_pests_and_diseases">PESTS</button>
+    </a>
+      <a href="{% url 'diseases' %}" class="button-wrapper">
+        <button class="btn_for_pests_and_diseases"> Diseases </button>
+      </a>  
+      </div>
+    
+
+    </div>
+    
+    <div class="card">
+      <div class="image">
+        <img src="{% static 'images/protect.webp' %}">
+      </div>
+      <div class="content" >
+        <h2>Protect Your PLANTS</h2> 
+        <p>Know about the control measures<br>and how to protect it<br></p>
+        
+        <button class="btn_for_pests_and_diseases"> PESTS Prevention</button>
+        <button class="btn_for_pests_and_diseases"> Disease Prevention </button>
+      </div>
+   
+
+    </div>
+    <div class="card">
+      <div class="image">
+        <img src="{% static 'images/intro2.jpg'%}">
+      </div>
+      <div class="content">
+        <h2>Assignment 4</h2> 
+        <p>Coming<br>Soon!<br></p>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  </div>
+
+
+  
+        
+</main>
+</body>
+<script src="{% static 'JS/home.js'%}"></script>
+</html>
