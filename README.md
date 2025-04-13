@@ -13,4 +13,5 @@ This Django-based web application is designed to support mango growers, biosecur
 ---
 
 ## 🚀 Getting Started
-
+CLONE THE REPOSITORY
+git clone https://github.com/Faiyaz197023/HIT237.git
