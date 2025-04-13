@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Protection</title>
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Disease Protection</h1>
+    </header>
+    
+    <nav>
+        {% include 'main/nav.html' %}
+    </nav>
+    
+    <main class="grid-container">
+        {% for disease in protections %}
+        <div class="pest-card">
+            <img src="{% static disease.image %}" alt="{{ disease.name }}">
+            <h2>{{ disease.name }}</h2>
+            <p><strong>Protection Measure:</strong> <br>{{ disease.measure }}</p>
+        </div>
+        {% endfor %}
+    </main>
+</body>
+</html>

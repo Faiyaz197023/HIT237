@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mango Diseases</title>
+    <link rel="stylesheet" href="{% static 'css/diseases.css' %}">
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center; margin-top: 20px;">Mango Diseases</h1>
+    </header>
+
+    <nav>
+        {% include 'main/nav.html' %}
+    </nav>
+
+    <main class="grid-container">
+        {% for disease in diseases %}
+        <div class="disease-card">
+            <img src="{% static disease.image %}" alt="{{ disease.name }}">
+            <h2>{{ disease.name }}</h2>
+            <p><strong>Scientific Name:</strong><br><i>{{ disease.scientific_name }}</i></p>
+            <p><strong>Affects:</strong><br>{{ disease.affects }}</p>
+            <a class="learn-more-button" href="{% url 'disease_detail' disease.key %}">Learn More</a>
+        </div>
+        {% endfor %}
+    </main>
+</body>
+</html>
