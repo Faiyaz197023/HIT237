@@ -1,0 +1,62 @@
+body {
+    font-family: 'Bree Serif', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+h1 {
+    background-color: #28a745;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+}
+
+p {
+    max-width: 800px;
+    margin: 30px auto 10px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    padding: 0 20px;
+}
+
+ul {
+    max-width: 800px;
+    margin: 20px auto 50px;
+    background: #ffffff;
+    padding: 20px;
+    list-style-type: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+ul::before {
+    content: "Team Members";
+    font-size: 1.3rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #e9ecef;
+    border-left: 5px solid #28a745;
+    border-radius: 5px;
+}
+
+nav {
+    background-color: #eee;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #28a745;
+    font-weight: bold;
+    margin: 0 10px;
+}
