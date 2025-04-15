@@ -8,36 +8,31 @@
     <title>About Us</title>
     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
 
-<<<<<<< HEAD
     <link rel="stylesheet" href="{% static 'css/aboutus.css'%}">
-=======
-    <link rel="stylesheet" href="{% static 'css/home.css'%}">
->>>>>>> 0c6d44836e4b92f8ed5c5fa3f58022bcb85e3c63
 </head>
 <body>
     <nav>
         {% include 'main/nav.html' %}
     </nav>
-    <h1>About Us</h1>
-    <p>Welcome to our website! This Django-based web application is designed to support mango growers, biosecurity officers, and agricultural researchers in monitoring and managing mango pests effectively. The system provides tools for pest identification, reporting, data analysis, and biosecurity education.</p>
-    <ul> Team members 
-        <li>
-        Md Meherab Hossain
-        Student S380249
-        </li>
-        <li>
-        Ahnad As Sabor Siam
-        Student S374721
-        </li>
-        
-        <li>
-           Faiyaz Mugni Zaman
-            Student S372984 
-        </li>
-        <li>
-        Abdurrahman Adeiza Aliyu
-        Student S371930
-        </li>
-    </ul>
+
+    <div class="about">
+        <h1>About Us</h1>
+        <p>Welcome to our website! This Django-based web application is designed to support mango growers, biosecurity officers, and agricultural researchers in monitoring and managing mango pests effectively. The system provides tools for pest identification, reporting, data analysis, and biosecurity education.</p>
+        <ul>
+            <li class="list">
+            Md Meherab Hossain (Student S380249)
+            </li>
+            <li class="list">
+            Ahnad As Sabor Siam (Student S374721)
+            </li>
+            
+            <li class="list">
+            Faiyaz Mugni Zaman (Student S372984)
+            </li>
+            <li class ="list">
+            Abdurrahman Adeiza Aliyu (Student S371930)
+            </li>
+        </ul>
+    </div>
 </body>
 </html>

@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <header>
-        <h1>Mango Pests</h1>
-    </header>
     <nav>
         {% include 'main/nav.html' %}
     </nav>
+    
+    <header>
+        <h1>Mango Pests</h1>
+    </header>
+
     <main class="grid-container">
         {% for pest in pests %}
         <div class="pest-card">

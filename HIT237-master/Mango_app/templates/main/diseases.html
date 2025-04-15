@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="{% static 'css/diseases.css' %}">
 </head>
 <body>
-    <header>
-        <h1 style="text-align: center; margin-top: 20px;">Mango Diseases</h1>
-    </header>
-
     <nav>
         {% include 'main/nav.html' %}
     </nav>
+
+    <header>
+        <h1 style="text-align: center; margin-top: 20px;">Mango Diseases</h1>
+    </header>
 
     <main class="grid-container">
         {% for disease in diseases %}
