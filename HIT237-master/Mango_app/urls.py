@@ -11,10 +11,6 @@ urlpatterns = [
     re_path(r'^diseases/$', DiseasesView.as_view(), name='diseases'),
     re_path(r'^disease_detail/(?P<key>[a-zA-Z0-9_-]+)/$', DiseaseDetailView.as_view(), name='disease_detail'),
     re_path(r'^disease_protection/$', DiseaseProtectionView.as_view(), name='disease_protection'),
-    re_path(r'disease_protection/(?P<key>[\w-]+)/$', DiseaseProtectDetailView.as_view(), name='disease_protect_detail'),
-
-
-    # optional: details for a single disease protection by key
     re_path(r'^disease_protection/(?P<key>[\w-]+)/$', DiseaseProtectDetailView.as_view(), name='disease_protect_detail'),
 
     path('about/', about_us, name='aboutus'),
