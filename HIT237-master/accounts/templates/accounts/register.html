@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <style>
+    body { font-family: Arial, sans-serif; background: #f7f7f7; }
+    .box {
+      max-width: 360px; margin: 100px auto; padding: 20px; background: #fff;
+      border:1px solid #ddd; border-radius:4px; box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    }
+    h1 { text-align:center; margin-bottom:20px;}
+    form label { display:block; margin-bottom:10px; }
+    form input { width:100%; padding:8px; box-sizing:border-box; }
+
+    button {
+      width:100%; padding:10px; background:#28a745; color:#fff;
+      border:none; border-radius:2px; cursor:pointer;
+    }
+    button:hover { background:#218838; }
+    .errorlist { color:#c00; margin-bottom:10px; list-style:none; padding-left:0; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Create Account</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <label>
+        {{ form.username.label_tag }}
+        {{ form.username }}
+        {{ form.username.errors }}
+      </label>
+      <label>
+        {{ form.email.label_tag }}
+        {{ form.email }}
+        {{ form.email.errors }}
+      </label>
+      <label>
+        {{ form.password1.label_tag }}
+        {{ form.password1 }}
+        {{ form.password1.errors }}
+      </label>
+      <label>
+        {{ form.password2.label_tag }}
+        {{ form.password2 }}
+        {{ form.password2.errors }}
+      </label>
+      <button type="submit">Register</button>
+    </form>
+
+    <p style="text-align:center; margin-top:10px;">
+      Already have an account?
+      <a href="{% url 'accounts:login' %}">Sign in here</a>
+    </p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+
+  <!-- Font Awesome for the eye icon -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <style>
+    body { font-family: Arial, sans-serif; background: #f7f7f7; }
+    .login-box {
+      max-width: 320px;
+      margin: 100px auto;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .login-box h1 { text-align: center; margin-bottom: 20px; }
+    .login-box label { display: block; margin-bottom: 10px; }
+    .login-box input {
+      width: 100%; padding: 8px; box-sizing: border-box;
+      border: 1px solid #ccc; border-radius: 2px;
+    }
+
+    /* Eye-icon wrapper */
+    .password-wrapper {
+      position: relative;
+    }
+    .password-wrapper input {
+      padding-right: 2.5em; /* room for the icon */
+    }
+    .password-toggle {
+      position: absolute;
+      right: 0.75em;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 1em;
+      color: #666;
+    }
+    .password-toggle:hover { color: #333; }
+
+    /* Green button to match site style */
+    .login-box button {
+      width: 100%; padding: 10px;
+      background: #28a745; /* green */
+      color: white; border: none;
+      border-radius: 2px; cursor: pointer;
+    }
+    .login-box button:hover { background: #218838; }
+
+    .error { color: #c00; text-align: center; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h1>Sign In</h1>
+
+    {% if error %}
+      <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <form method="post">
+      {% csrf_token %}
+      <label>
+        Username
+        <input type="text" name="username" required autofocus>
+      </label>
+      <label>
+        Password
+        <div class="password-wrapper">
+          <input
+            id="password-input"
+            type="password"
+            name="password"
+            required
+          />
+          <i
+            id="togglePassword"
+            class="fa-solid fa-eye password-toggle"
+            aria-hidden="true"
+          ></i>
+        </div>
+      </label>
+      <button type="submit">Log In</button>
+    </form>
+  </div>
+
+  <script>
+    const pwdInput = document.getElementById('password-input');
+    const toggle   = document.getElementById('togglePassword');
+
+    toggle.addEventListener('click', () => {
+      const isPwd = pwdInput.type === 'password';
+      pwdInput.type = isPwd ? 'text' : 'password';
+      toggle.classList.toggle('fa-eye');
+      toggle.classList.toggle('fa-eye-slash');
+    });
+  </script>
+</body>
+</html>
