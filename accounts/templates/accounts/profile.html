@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Profile</title>
+  <link rel="stylesheet" href="{% static 'css/profile.css' %}"> 
+</head>
+<body>
+  <nav>
+        {% include 'main/nav.html' %}
+    </nav>
+  <div class="profile-container">
+    <h1>Your Profile</h1>
+
+    <!-- Button to view past surveillance records -->
+    <div class="records-section">
+  <button
+    id="view-records-button"
+    class="records-button"
+    onclick="window.location.href='{% url 'session-list' %}'">
+    Your Past Records
+  </button>
+</div>
+
+
+    <!-- Update Profile Section -->
+    <div class="section">
+      <h2>Update Name &amp; Email</h2>
+      <form method="post">
+        {% csrf_token %}
+        {{ p_form.as_p }}
+        <button type="submit" name="update_profile">Save Changes</button>
+      </form>
+    </div>
+
+    <!-- Change Password Section -->
+    <div class="section">
+      <h2>Change Password</h2>
+      <form method="post">
+        {% csrf_token %}
+        {{ pw_form.as_p }}
+        <button type="submit" name="change_password">Change Password</button>
+      </form>
+    </div>
+  </div>
+  </div>
+</body>
+</html>

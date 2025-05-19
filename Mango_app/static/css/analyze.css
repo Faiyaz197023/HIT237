@@ -1,0 +1,10 @@
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+  
+    .container { max-width: 800px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    form { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-bottom: 2rem; }
+    form label { flex: 0 0 100%; margin-bottom: 0.5rem; font-weight: bold; }
+    form input[type="file"] { flex: 1; padding: 0.5rem; }
+    form button { background: #007BFF; color: #fff; border: none; padding: 0.75rem 1.5rem; border-radius: 4px; cursor: pointer; transition: background 0.3s; }
+    form button:hover { background: #0056b3; }
+    .result-map { font-size: 1rem; white-space: pre-wrap; background: #f0f0f0; padding: 1rem; border-radius: 4px; }

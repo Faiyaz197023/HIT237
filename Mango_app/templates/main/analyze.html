@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Analysis</title>
+  <link rel="stylesheet" href="{% static 'css/analyze.css' %}">
+</head>
+<body>
+  {% include 'main/nav.html' %}
+
+  <div class="container">
+    <h1>Upload & Analyze Image</h1>
+
+    {# === Form A: Upload & Analyze === #}
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.image.label_tag }}
+      {{ form.image }}
+      <button type="submit" name="action" value="analyze">
+        🔍 Analyze
+      </button>
+    </form>
+
+    {# If we have a result, show it… #}
+    {% if upload and label %}
+      <div class="result">
+        <h2>Detected Class</h2>
+        <p class="label">{{ label }}</p>
+
+        <h2>Uploaded Image</h2>
+        <img src="{{ upload.image.url }}"
+             alt="Uploaded"
+             style="max-width:100%; border-radius:4px; margin-bottom:1rem;">
+      </div>
+
+      {# === Form B: Save Without Re-uploading === #}
+      <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="action"    value="save">
+        <input type="hidden" name="upload_id" value="{{ upload.id }}">
+        <input type="hidden" name="label"     value="{{ label }}">
+        <button type="submit">
+          💾 Save Record
+        </button>
+      </form>
+    {% endif %}
+  </div>
+</body>
+</html>

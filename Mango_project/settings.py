@@ -11,10 +11,18 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+<<<<<<< HEAD
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+=======
+import os
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+>>>>>>> daa7809 (ASSIGNMENT 4 STRUCTURE)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -38,6 +46,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Mango_app',
+<<<<<<< HEAD
+=======
+    'accounts',
+>>>>>>> daa7809 (ASSIGNMENT 4 STRUCTURE)
 ]
 
 MIDDLEWARE = [
@@ -122,3 +134,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+<<<<<<< HEAD
+=======
+
+EMAIL_BACKEND      = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'no-reply@farmersapp.com'
+>>>>>>> daa7809 (ASSIGNMENT 4 STRUCTURE)

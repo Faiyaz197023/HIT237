@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Delete Surveillance Record</title>
+  <link rel="stylesheet" href="{% static '/css/session_list.css' %}">
+</head>
+<body>
+    <nav>{% include 'main/nav.html' %}</nav>
+  <div class="form-container" style="max-width:500px; margin:2rem auto; padding:1.5rem; background:#fff; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+    <h1>Delete Record</h1>
+    <p>Are you sure you want to delete the record ?</p>
+    <form method="post" style="display:flex; gap:1rem;">
+      {% csrf_token %}
+      <button type="submit" style="flex:1; padding:0.5rem; background:#e74c3c; color:#fff; border:none; border-radius:4px; cursor:pointer;">
+        Yes, Delete
+      </button>
+      <a href="{% url 'session-list' %}" style="flex:1; padding:0.5rem; text-align:center; text-decoration:none; background:#bdc3c7; color:#2c3e50; border-radius:4px;">
+        Cancel
+      </a>
+    </form>
+  </div>
+</body>
+</html>

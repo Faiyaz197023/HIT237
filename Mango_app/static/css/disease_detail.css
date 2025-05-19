@@ -20,9 +20,17 @@ header {
     margin-bottom: 1rem;
 }
 
+<<<<<<< HEAD
 img {
     width: 20%;
     aspect-ratio: 3/2;
+=======
+.imgbox {
+    width: 20%;
+    height: 200px;
+    object-fit: contain;
+    background-color: #f0f0f0;
+>>>>>>> daa7809 (ASSIGNMENT 4 STRUCTURE)
 }
 
 button {

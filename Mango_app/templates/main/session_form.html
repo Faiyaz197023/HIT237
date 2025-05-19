@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Surveillance Record</title>
+   <link rel="stylesheet" href="{% static 'css/session_form.css' %}">
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHbk7hZmJAmEF82ziZ33Gsjv3mnTQEfPs&libraries=places"
+    defer
+  ></script>
+  <script src="{% static 'JS/session_form.js'%}"></script>
+</head>
+
+<body>
+  <nav>{% include 'main/nav.html' %}</nav>
+  <div class="form-container">
+    <h1>New Surveillance Record</h1>
+    <form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+
+  <div class="summary">
+    <h2>Surveillance</h2>
+    <p><strong>Expected Plants  based on area × stocking rate :</strong> <span id="sum-plants">—</span></p>
+  <p><strong>% Inspected:</strong>   <span id="pct-inspected">—</span></p>
+  <p><strong>Min/Plant:</strong>    <span id="min-per-plant">—</span></p>
+   <p><strong>Recommended Samples:</strong>         <span id="req-samples">—</span></p>
+    <p><strong>Estimated Effort:</strong>            <span id="req-effort">—</span></p>
+  </div>
+
+  <button type="submit">Save Record</button>
+</form>
+  </div>
+</body>
+</html>

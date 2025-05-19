@@ -16,8 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+<<<<<<< HEAD
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Mango_app.urls')),
 ]
+=======
+from django.conf import settings
+from django.conf.urls.static import static
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('Mango_app.urls')),
+    path('accounts/', include('accounts.urls'))
+]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+>>>>>>> daa7809 (ASSIGNMENT 4 STRUCTURE)

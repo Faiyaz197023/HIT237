@@ -90,6 +90,7 @@ class Disease(Organism):
 
     def get_gallery(self):
         return self._gallery
+<<<<<<< HEAD
 
 
 class Protect_Against_Diseases:
@@ -119,3 +120,58 @@ class Protect_Against_Diseases:
 
     
 
+=======
+    
+class Diseases_Protection:
+    def __init__(self, key, name, scientific_name, affects, description, controlling_strategies, monitoring):
+        self.key = key
+        self.name = name
+        self.scientific_name = scientific_name
+        self.affects = affects
+        self.description = description
+        self.controlling_strategies = controlling_strategies
+        self.monitoring = monitoring
+
+    @classmethod
+    def from_data(cls, data, detail_data, protection_data):
+        # Get the matching disease detail
+        detail = next((d for d in detail_data if d['key'] == data['key']), {})
+        # Get the matching protection data
+        protection = next((p for p in protection_data if p['key'] == data['key']), {})
+
+        return cls(
+            key=data.get('key'),
+            name=data.get('name'),
+            scientific_name=data.get('scientific_name', ''),
+            affects=data.get('affects', ''),
+            description=detail.get('description', ''),
+            controlling_strategies=protection.get('controlling_strategies', ''),
+            monitoring=protection.get('monitoring', '')
+        )
+
+
+class Protect_Against_Diseases:
+    def __init__(self, key, name, scientific_name, affects, description, controlling_strategies, monitoring):
+        self.key = key
+        self.name = name
+        self.scientific_name = scientific_name
+        self.affects = affects
+        self.description = description
+        self.controlling_strategies = controlling_strategies
+        self.monitoring = monitoring
+
+    @classmethod
+    def from_disease_prot_data(cls, disease_data, disease_description, protection_detail):
+        description_data = next((d for d in disease_description if d['key'] == disease_data['key']), {})
+        protection_data = next((p for p in protection_detail if p['key'] == disease_data['key']), {})
+
+        return cls(
+            key=disease_data['key'],
+            name=disease_data.get('name', ''),
+            scientific_name=disease_data.get('scientific_name', ''),
+            affects=disease_data.get('affects', ''),
+            description=description_data.get('description', ''),
+            controlling_strategies=protection_data.get('controlling_strategies', ''),
+            monitoring=protection_data.get('monitoring', '')
+        )
+>>>>>>> daa7809 (ASSIGNMENT 4 STRUCTURE)

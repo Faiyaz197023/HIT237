@@ -16,7 +16,11 @@
     </header>
 
     <main>
+<<<<<<< HEAD
         <img src="{% static disease.image %}" alt="{{ disease.name }}">
+=======
+        <img class= imgbox src="{% static disease.image %}" alt="{{ disease.name }}">
+>>>>>>> daa7809 (ASSIGNMENT 4 STRUCTURE)
         
         <h2>Damages</h2>
         <p>{{ disease.description }}</p>
@@ -24,9 +28,16 @@
         <h2>LIFE CYCLE</h2>
         <p>{{ disease.life_cycle }}</p>
 
+<<<<<<< HEAD
         <a href="{% url 'disease_protection'  %}">
             <button>Go to Control Strategies</button>
         </a>
+=======
+        <a href="{% url 'disease_protect_detail' disease.key %}">
+            <button>Go to Control Strategies</button>
+        </a>
+
+>>>>>>> daa7809 (ASSIGNMENT 4 STRUCTURE)
     </main>
 </body>
 </html>

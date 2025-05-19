@@ -1,0 +1,77 @@
+/* Container for all session cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual card */
+.card {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 1.25rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+/* Card heading */
+.card h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: #2c3e50;
+}
+
+/* Card paragraphs */
+.card p {
+  margin: 0.5rem 0;
+  line-height: 1.4;
+  color: #34495e;
+}
+
+/* Delete button */
+.delete-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: #e74c3c;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+/* “No records” message */
+.empty {
+  text-align: center;
+  margin: 2rem;
+  color: #7f8c8d;
+}
+.back-btn {
+      display: inline-block;
+      margin: 1rem;
+      padding: 0.5rem 1rem;
+      background: #3498db;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .back-btn:hover {
+      background: #2980b9;
+    }

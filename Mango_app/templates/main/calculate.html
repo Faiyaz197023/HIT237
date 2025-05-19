@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surveillance Dashboard</title>
+   <link rel="stylesheet" href="{% static 'css/calculate.css' %}">
+ 
+</head>
+<body>
+  <nav>{% include 'main/nav.html' %}</nav>
+  <div class="container">
+    <div class="half left">
+      <div class="content">
+        <h1>SURVEILLANCE REPORT</h1>
+        <!-- anchor instead of JS -->
+        <a href="{% url 'session-create' %}" class="button">
+          <span>Go to Report</span>
+        </a>
+      </div>
+    </div>
+    <div class="half right">
+      <div class="content">
+        <h1>CHECK DISEASE BY IMAGE</h1>
+        <a href="{% url 'analyze' %}" class="button">
+          <span>Check for Disease</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

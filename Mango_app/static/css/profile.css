@@ -1,0 +1,93 @@
+body {
+  background: #f0f4f8;
+  color:      #333;
+  font-family: sans-serif;
+  font-size:  1.1em;
+  line-height:1.4;
+  margin:     0;
+  padding:    0;
+}
+
+.profile-container {
+  max-width: 600px;
+  margin:     2em auto;
+  padding:    2em;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color:     #2a7ae2;
+  margin-bottom: 1em;
+  font-size: 1.8em;
+}
+
+/* Records button */
+.records-section {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.records-button,
+#view-records-button {
+  display: inline-block;
+  background:    #2a7ae2;
+  color:         #fff;
+  padding:       0.8em 1.5em;
+  font-size:     1.1em;
+  border:        none;
+  border-radius: 4px;
+  cursor:        pointer;
+  transition:    background 0.2s ease, transform 0.1s ease;
+}
+
+.records-button:hover,
+#view-records-button:hover {
+  background: #1d5bbf;
+}
+
+.records-button:active,
+#view-records-button:active {
+  transform: scale(0.97);
+}
+
+/* Form sections */
+.section {
+  margin-bottom: 2em;
+}
+
+h2 {
+  color:     #444;
+  margin-bottom: 0.5em;
+  font-size: 1.4em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width:        100%;
+  padding:      0.75em;
+  margin-bottom:1em;
+  border:       1px solid #bbb;
+  border-radius:4px;
+  font-size:    1em;
+}
+
+button[name="update_profile"],
+button[name="change_password"] {
+  width:        100%;
+  padding:      0.9em;
+  font-size:    1.1em;
+  background:   #2a7ae2;
+  color:        #fff;
+  border:       none;
+  border-radius:4px;
+  cursor:       pointer;
+  transition:   background 0.2s ease;
+}
+button[name="update_profile"]:hover,
+button[name="change_password"]:hover {
+  background: #1d5bbf;
+}

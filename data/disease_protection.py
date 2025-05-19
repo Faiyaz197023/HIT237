@@ -21,7 +21,11 @@ protection_data = [
         "key": "mango_scale",
         "name": "Mango Scale",
         "image": "images/pink_wax_scale.jpeg",
+<<<<<<< HEAD
         "measure": "High volume (1200L/ha) cover sprays after pruning with mineral oils and methidathion depending on scale activity."
+=======
+        "measure": "High volume (1200L/ha) copper sprays after pruning with mineral oils and methidathion depending on scale activity."
+>>>>>>> daa7809 (ASSIGNMENT 4 STRUCTURE)
     },
     {
         "key": "mango_mmd",
